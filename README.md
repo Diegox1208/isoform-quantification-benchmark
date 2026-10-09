@@ -62,10 +62,10 @@ At 2 × 100 bp, median absolute error per isoform, mean of three seeds. The sour
 <tbody><tr><td>isoforms in the gene</td><td>1</td><td>341</td><td>0.0%</td><td>0.0%</td><td>1.3%</td></tr></tbody>
 <tbody><tr><td>isoforms in the gene</td><td>2</td><td>189</td><td>1.9%</td><td>2.3%</td><td>4.2%</td></tr></tbody>
 <tbody><tr><td>isoforms in the gene</td><td>3-4</td><td>272</td><td>5.6%</td><td>6.6%</td><td>7.5%</td></tr></tbody>
-<tbody><tr><td>isoforms in the gene</td><td>5 or more</td><td>238</td><td>11.7%</td><td>12.3%</td><td>12.5%</td></tr></tbody>
+<tbody><tr><td>isoforms in the gene</td><td>5 or more</td><td>238</td><td>11.7%</td><td>12.3%</td><td>12.4%</td></tr></tbody>
 <tbody><tr><td>31-mers owned by the isoform</td><td>under 10%</td><td>436</td><td>9.7%</td><td>10.9%</td><td>11.1%</td></tr></tbody>
 <tbody><tr><td>31-mers owned by the isoform</td><td>10-50%</td><td>160</td><td>3.5%</td><td>4.3%</td><td>6.2%</td></tr></tbody>
-<tbody><tr><td>31-mers owned by the isoform</td><td>50% or more</td><td>444</td><td>0.0%</td><td>0.2%</td><td>1.5%</td></tr></tbody>
+<tbody><tr><td>31-mers owned by the isoform</td><td>50% or more</td><td>444</td><td>0.0%</td><td>0.1%</td><td>1.5%</td></tr></tbody>
 </table>
 
 ## Confirmed vs not confirmed

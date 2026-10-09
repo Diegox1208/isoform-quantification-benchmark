@@ -29,7 +29,7 @@ Working run on the whole of chr22, nine samples of 1 000 000 fragments, 35 min 4
 <table>
 <thead><tr><th>Item</th><th>Predicted</th><th>Outcome</th></tr></thead>
 <tbody><tr><td>Salmon and kallisto per isoform at 2 × 100 bp</td><td>median absolute error under 10%</td><td>1.9% and 2.5%, confirmed</td></tr></tbody>
-<tbody><tr><td>Isoform error from genes with 2 isoforms to genes with 5 or more</td><td>at least doubles</td><td>Salmon 1.9% to 11.7%, kallisto 2.3% to 12.3%, RSEM 4.2% to 12.5%, confirmed</td></tr></tbody>
+<tbody><tr><td>Isoform error from genes with 2 isoforms to genes with 5 or more</td><td>at least doubles</td><td>Salmon 1.9% to 11.7%, kallisto 2.3% to 12.3%, RSEM 4.2% to 12.4%, confirmed</td></tr></tbody>
 <tbody><tr><td>All four methods per gene at 2 × 100 bp</td><td>median absolute error under 5%</td><td>Salmon 0.0%, kallisto 0.0%, RSEM 2.1%, featureCounts 0.2%, confirmed</td></tr></tbody>
 <tbody><tr><td>Not predicted</td><td></td><td>featureCounts misses by more than 10% on 25.0% of genes and counts 92.7% of the fragments, while its median gene stays within 0.2%</td></tr></tbody>
 <tbody><tr><td>Not predicted</td><td></td><td>RSEM counts 97.8% of the fragments at every read length, because STAR leaves soft-clipped alignments out of the transcriptome BAM</td></tr></tbody>

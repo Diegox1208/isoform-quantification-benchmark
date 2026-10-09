@@ -217,8 +217,8 @@ for a in (a1, a2):
 #-----------------------------------------------------------
 Path(args.prefix).parent.mkdir(parents=True, exist_ok=True)
 long.to_csv(f"{args.prefix}_isoform_estimates.tsv.gz", sep="\t", index=False, float_format="%.2f")
-by_sample.to_csv(f"{args.prefix}_by_sample.tsv", sep="\t", index=False, float_format="%.4f")
-summary.to_csv(f"{args.prefix}_summary.tsv", sep="\t", index=False, float_format="%.4f")
-strata.to_csv(f"{args.prefix}_strata.tsv", sep="\t", index=False, float_format="%.4f")
+by_sample.to_csv(f"{args.prefix}_by_sample.tsv", sep="\t", index=False, float_format="%.6f")
+summary.to_csv(f"{args.prefix}_summary.tsv", sep="\t", index=False, float_format="%.6f")
+strata.to_csv(f"{args.prefix}_strata.tsv", sep="\t", index=False, float_format="%.6f")
 fig.savefig(f"{args.prefix}_error.png", dpi=120, facecolor=surface)
 print(f"Saved {args.prefix}_isoform_estimates.tsv.gz, _by_sample.tsv, _summary.tsv, _strata.tsv and _error.png")
