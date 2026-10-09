@@ -3,7 +3,8 @@
 #
 # Stage 07 compares every method with the simulated truth, per isoform and per gene.
 # Error metrics use features with at least --min-truth true fragments. Fragments a method gives to
-# features with no true fragment are reported apart, as a share of the true total.
+# features with no true fragment are reported apart, as a share of the true total, and so is the
+# share of features off by more than 10%, the tail a median hides.
 # Isoform errors are also split by the number of isoforms in the gene and by the share of
 # sequence an isoform does not share with its siblings.
 
@@ -71,6 +72,7 @@ def metrics(truth, estimate, min_truth):
     return dict(features=int(kept.sum()),
                 spearman=spearmanr(truth, estimate).statistic,
                 median_abs_rel_error=rel.abs().median(),
+                share_over_10pct=(rel.abs() > 0.10).mean(),
                 total_ratio=estimate.sum() / truth.sum(),
                 false_share=estimate[truth == 0].sum() / truth.sum())
 
@@ -123,7 +125,7 @@ with Timer("Analysis"):
             rows.append(dict(name=name, level="gene", method=method, **metrics(t_gene, e_gene, args.min_truth)))
 
     by_sample = pd.DataFrame(rows).merge(info[["name", "readLength", "seed"]], on="name")
-    numeric = ["spearman", "median_abs_rel_error", "total_ratio", "false_share"]
+    numeric = ["spearman", "median_abs_rel_error", "share_over_10pct", "total_ratio", "false_share"]
     summary = by_sample.groupby(["level", "readLength", "method"], sort=False)[numeric].agg(["mean", "std"])
     summary.columns = [f"{a}_{b}" for a, b in summary.columns]
     summary = summary.reset_index()
@@ -193,7 +195,7 @@ for i, (method, c) in enumerate(zip(TX_METHODS, colours)):
     for b, v in zip(bars, vals):
         if np.isfinite(v):
             values.append(v)
-            a2.annotate(f"{v:.1f}" if v < 10 else f"{v:.0f}", (b.get_x() + b.get_width() / 2, v),
+            a2.annotate(f"{v:.1f}", (b.get_x() + b.get_width() / 2, v),
                         xytext=(0, 3), textcoords="offset points", ha="center", fontsize=8, color=ink)
 counts = st[st["method"] == TX_METHODS[0]].set_index("stratum").reindex(labels)["transcripts"]
 a2.set_xticks(x, [f"{l} isoform{'' if l == '1' else 's'}\n{0 if pd.isna(n) else round(n)} transcripts"
