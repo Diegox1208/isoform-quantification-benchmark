@@ -1,0 +1,64 @@
+readLength	method	stratum	transcripts	median_abs_rel_error_mean	median_abs_rel_error_std	split_by
+50	RSEM	1	341.0000	0.0132	0.0010	isoform
+50	RSEM	2	189.0000	0.0416	0.0034	isoform
+50	RSEM	3-4	272.0000	0.0808	0.0039	isoform
+50	RSEM	5 or more	238.0000	0.1319	0.0184	isoform
+50	Salmon	1	341.0000	0.0039	0.0001	isoform
+50	Salmon	2	189.0000	0.0215	0.0022	isoform
+50	Salmon	3-4	272.0000	0.0605	0.0019	isoform
+50	Salmon	5 or more	238.0000	0.1338	0.0093	isoform
+50	kallisto	1	341.0000	0.0054	0.0004	isoform
+50	kallisto	2	189.0000	0.0365	0.0024	isoform
+50	kallisto	3-4	272.0000	0.0952	0.0006	isoform
+50	kallisto	5 or more	238.0000	0.2065	0.0146	isoform
+100	RSEM	1	341.0000	0.0125	0.0002	isoform
+100	RSEM	2	189.0000	0.0422	0.0023	isoform
+100	RSEM	3-4	272.0000	0.0754	0.0053	isoform
+100	RSEM	5 or more	238.0000	0.1245	0.0010	isoform
+100	Salmon	1	341.0000	0.0000	0.0000	isoform
+100	Salmon	2	189.0000	0.0185	0.0020	isoform
+100	Salmon	3-4	272.0000	0.0560	0.0085	isoform
+100	Salmon	5 or more	238.0000	0.1166	0.0095	isoform
+100	kallisto	1	341.0000	0.0000	0.0000	isoform
+100	kallisto	2	189.0000	0.0234	0.0004	isoform
+100	kallisto	3-4	272.0000	0.0661	0.0096	isoform
+100	kallisto	5 or more	238.0000	0.1227	0.0045	isoform
+150	RSEM	1	341.0000	0.0126	0.0007	isoform
+150	RSEM	2	189.0000	0.0411	0.0032	isoform
+150	RSEM	3-4	272.0000	0.0721	0.0029	isoform
+150	RSEM	5 or more	238.0000	0.1136	0.0020	isoform
+150	Salmon	1	341.0000	0.0000	0.0000	isoform
+150	Salmon	2	189.0000	0.0188	0.0018	isoform
+150	Salmon	3-4	272.0000	0.0571	0.0130	isoform
+150	Salmon	5 or more	238.0000	0.1059	0.0062	isoform
+150	kallisto	1	341.0000	0.0000	0.0000	isoform
+150	kallisto	2	189.0000	0.0207	0.0008	isoform
+150	kallisto	3-4	272.0000	0.0551	0.0052	isoform
+150	kallisto	5 or more	238.0000	0.1145	0.0069	isoform
+50	RSEM	under 10%	436.0000	0.1194	0.0058	unique
+50	RSEM	10-50%	160.0000	0.0617	0.0043	unique
+50	RSEM	50% or more	444.0000	0.0159	0.0004	unique
+50	Salmon	under 10%	436.0000	0.1112	0.0109	unique
+50	Salmon	10-50%	160.0000	0.0359	0.0019	unique
+50	Salmon	50% or more	444.0000	0.0045	0.0001	unique
+50	kallisto	under 10%	436.0000	0.1774	0.0171	unique
+50	kallisto	10-50%	160.0000	0.0625	0.0052	unique
+50	kallisto	50% or more	444.0000	0.0064	0.0002	unique
+100	RSEM	under 10%	436.0000	0.1108	0.0031	unique
+100	RSEM	10-50%	160.0000	0.0617	0.0062	unique
+100	RSEM	50% or more	444.0000	0.0147	0.0006	unique
+100	Salmon	under 10%	436.0000	0.0966	0.0083	unique
+100	Salmon	10-50%	160.0000	0.0351	0.0025	unique
+100	Salmon	50% or more	444.0000	0.0000	0.0000	unique
+100	kallisto	under 10%	436.0000	0.1093	0.0063	unique
+100	kallisto	10-50%	160.0000	0.0430	0.0059	unique
+100	kallisto	50% or more	444.0000	0.0015	0.0002	unique
+150	RSEM	under 10%	436.0000	0.1071	0.0020	unique
+150	RSEM	10-50%	160.0000	0.0590	0.0040	unique
+150	RSEM	50% or more	444.0000	0.0146	0.0004	unique
+150	Salmon	under 10%	436.0000	0.0907	0.0063	unique
+150	Salmon	10-50%	160.0000	0.0343	0.0022	unique
+150	Salmon	50% or more	444.0000	0.0000	0.0000	unique
+150	kallisto	under 10%	436.0000	0.0911	0.0108	unique
+150	kallisto	10-50%	160.0000	0.0326	0.0042	unique
+150	kallisto	50% or more	444.0000	0.0015	0.0001	unique
