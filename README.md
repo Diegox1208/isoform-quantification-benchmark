@@ -2,8 +2,6 @@
 
 On paired-end reads simulated from every protein-coding and lncRNA isoform of chr22, Salmon and kallisto recover isoform counts within 2.5% median error at 2 × 100 bp. The error grows from 2% to 12% as genes carry more isoforms, and featureCounts, accurate on the median gene, misses by more than 10% on a quarter of genes.
 
-This is not a ranking of quantifiers on real data. It is a test where the answer is written before the reads exist, which is the only way to say which estimate is right and not just which estimates disagree.
-
 Diego G. Salas · GRCh38 chr22 from UCSC, GENCODE release 46 basic annotation · fragments simulated with polyester 1.38.0
 
 ## Run it
