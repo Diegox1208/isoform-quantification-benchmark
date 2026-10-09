@@ -1,0 +1,10 @@
+sample	name	readLength	seed	source
+S1	pe050_s1	50	1	polyester, paired-end, 2 x 50 bp, seed 1
+S2	pe050_s2	50	2	polyester, paired-end, 2 x 50 bp, seed 2
+S3	pe050_s3	50	3	polyester, paired-end, 2 x 50 bp, seed 3
+S4	pe100_s1	100	1	polyester, paired-end, 2 x 100 bp, seed 1
+S5	pe100_s2	100	2	polyester, paired-end, 2 x 100 bp, seed 2
+S6	pe100_s3	100	3	polyester, paired-end, 2 x 100 bp, seed 3
+S7	pe150_s1	150	1	polyester, paired-end, 2 x 150 bp, seed 1
+S8	pe150_s2	150	2	polyester, paired-end, 2 x 150 bp, seed 2
+S9	pe150_s3	150	3	polyester, paired-end, 2 x 150 bp, seed 3

@@ -1,0 +1,11 @@
+/data/
+/logs/
+/tests/results/
+*.bam
+*.bai
+*.fastq.gz
+*.fasta.gz
+!/tests/data/raw/*.gz
+.Rhistory
+.RData
+__pycache__/

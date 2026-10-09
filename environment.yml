@@ -1,0 +1,20 @@
+name: isoform-quantification-benchmark
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.12
+  - r-base=4.3
+  - r-optparse
+  - bioconductor-polyester=1.38.0
+  - bioconductor-biostrings
+  - salmon
+  - kallisto
+  - rsem
+  - star=2.7.11b
+  - subread
+  - samtools
+  - pandas
+  - scipy
+  - matplotlib
+  - curl
