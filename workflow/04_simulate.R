@@ -1,7 +1,8 @@
 #!/usr/bin/env Rscript
 #### created by Diego G. Salas
 #
-# Stage 04 simulates paired-end fragments with polyester for every sample in the info file.
+# Stage 04 simulates paired-end fragments with polyester for every sample in the info file and
+# writes them as FASTQ with one constant quality, the input every aligner and quantifier accepts.
 # The design fixes how many fragments each transcript gets, the sample sets read length and seed.
 # The truth is then read back from the read names, so it counts what was written and not what was asked.
 
@@ -42,12 +43,19 @@ cat("Libraries\tdone in ", round(difftime(Sys.time(), t, units = "secs")), "s\tp
 
 ##### Functions #####
 #-----------------------------------------------------------
-truth.from.reads = function(reads.file) {
-  read.names = names(readDNAStringSet(reads.file))
+truth.from.names = function(read.names) {
   units = sub(";.*$", "", sub("^[^/]*/", "", read.names))
   counts.df = as.data.frame(table(transcript_id = units), stringsAsFactors = FALSE)
   names(counts.df)[2] = "fragments_simulated"
   counts.df
+}
+
+fasta.to.fastq = function(fasta.file, fastq.file) {
+  reads = readDNAStringSet(fasta.file)
+  qualities = BStringSet(strrep("I", width(reads)))
+  writeXStringSet(reads, fastq.file, format = "fastq", qualities = qualities, compress = TRUE)
+  file.remove(fasta.file)
+  names(reads)
 }
 
 ##### Data files #####
@@ -73,7 +81,6 @@ writeXStringSet(tx.dna[keep], keep.fasta.file)
 for (i in seq_len(nrow(info.df))) {
   name = info.df$name[i]
   out.dir = file.path(opt$out, name)
-  reads.file = file.path(out.dir, "sample_01_1.fasta.gz")
   truth.file = file.path(out.dir, "truth.tsv")
   if (file.exists(truth.file)) { cat("[04_simulate] ", truth.file, " exists, skipping ", name, "\n", sep = "", file = stderr()); next }
 
@@ -87,7 +94,9 @@ for (i in seq_len(nrow(info.df))) {
                                outdir = out.dir, readlen = info.df$readLength[i], seed = info.df$seed[i],
                                fraglen = opt$`frag-mean`, fragsd = opt$`frag-sd`, error_rate = opt$`error-rate`,
                                paired = TRUE, gzip = TRUE)
-  truth.df = truth.from.reads(reads.file)
+  read.names = fasta.to.fastq(file.path(out.dir, "sample_01_1.fasta.gz"), file.path(out.dir, "sample_01_1.fastq.gz"))
+  fasta.to.fastq(file.path(out.dir, "sample_01_2.fasta.gz"), file.path(out.dir, "sample_01_2.fastq.gz"))
+  truth.df = truth.from.names(read.names)
   write.table(truth.df, truth.file, sep = "\t", quote = FALSE, row.names = FALSE)
   cat(name, "\t", sum(truth.df$fragments_simulated), " fragments written\tdone in ",
       round(difftime(Sys.time(), t, units = "secs")), "s\n", sep = "")

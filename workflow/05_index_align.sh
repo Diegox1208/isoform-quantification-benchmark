@@ -49,8 +49,8 @@ fi
 while IFS=$'\t' read -r sample name readLength seed source; do
   [[ "${sample}" == "sample" || -z "${sample}" ]] && continue
 
-  r1="${simDir}/${name}/sample_01_1.fasta.gz"
-  r2="${simDir}/${name}/sample_01_2.fasta.gz"
+  r1="${simDir}/${name}/sample_01_1.fastq.gz"
+  r2="${simDir}/${name}/sample_01_2.fastq.gz"
   if [[ ! -f "${r1}" && "${DRY_RUN}" != "1" ]]; then
     echo "[${stage}] missing ${r1}, skipping ${name}" >&2
     continue

@@ -29,8 +29,8 @@ run() {
 bams=()
 while IFS=$'\t' read -r sample name readLength seed source; do
   [[ "${sample}" == "sample" || -z "${sample}" ]] && continue
-  r1="${simDir}/${name}/sample_01_1.fasta.gz"
-  r2="${simDir}/${name}/sample_01_2.fasta.gz"
+  r1="${simDir}/${name}/sample_01_1.fastq.gz"
+  r2="${simDir}/${name}/sample_01_2.fastq.gz"
   prefix="${alignDir}/${name}/${name}_"
   if [[ ! -s "${prefix}Aligned.toTranscriptome.out.bam" && "${DRY_RUN}" != "1" ]]; then
     echo "[${stage}] missing ${prefix}Aligned.toTranscriptome.out.bam, skipping ${name}" >&2
