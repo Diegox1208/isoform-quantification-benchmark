@@ -196,7 +196,8 @@ for i, (method, c) in enumerate(zip(TX_METHODS, colours)):
             a2.annotate(f"{v:.1f}" if v < 10 else f"{v:.0f}", (b.get_x() + b.get_width() / 2, v),
                         xytext=(0, 3), textcoords="offset points", ha="center", fontsize=8, color=ink)
 counts = st[st["method"] == TX_METHODS[0]].set_index("stratum").reindex(labels)["transcripts"]
-a2.set_xticks(x, [f"{l} isoforms\n{0 if pd.isna(n) else round(n)} transcripts" for l, n in zip(labels, counts)])
+a2.set_xticks(x, [f"{l} isoform{'' if l == '1' else 's'}\n{0 if pd.isna(n) else round(n)} transcripts"
+                  for l, n in zip(labels, counts)])
 a2.set_ylim(0, 1.15 * max([1] + values))
 a2.set_ylabel("median absolute error per isoform, %", color=ink)
 a2.set_title(f"Isoform error by isoforms per gene at 2 × {mid} bp", color=ink, loc="left")
